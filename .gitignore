@@ -1,0 +1,12 @@
+Makefile
+Makefile.old
+blib
+pm_to_blib
+SubUtil.o
+Util.bs
+SubUtil.c
+*.bak
+.*.swp
+Sub-Util*
+MYMETA.json
+MYMETA.yml

@@ -1,0 +1,15 @@
+MANIFEST.SKIP
+^\.git/
+.gitignore
+blib\b
+cover_db
+^Makefile$
+^Makefile.old$
+\.bak$
+^Sub-Util
+\.bs$
+\.[oc]$
+^MYMETA\.
+
+.vimrc
+\.NOTYET$
