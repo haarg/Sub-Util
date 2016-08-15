@@ -1,3 +1,6 @@
+1.46_01
+  * Sub::Util has been split out from Scalar-List-Utils
+
 1.45 -- 2016/03/25 16:09:40
 	[CHANGES]
 	 * Renamed existing uniq() to uniqstr()
