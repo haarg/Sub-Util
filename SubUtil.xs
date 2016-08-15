@@ -76,7 +76,7 @@ static enum slu_accum accum_type(SV *sv) {
 /* Magic for set_subname */
 static MGVTBL subname_vtbl;
 
-MODULE=List::Util       PACKAGE=List::Util
+MODULE=Sub::Util       PACKAGE=List::Util
 
 void
 min(...)
@@ -1099,7 +1099,7 @@ CODE:
         ST(0) = sv_2mortal(newSViv(retcount));
 }
 
-MODULE=List::Util       PACKAGE=Scalar::Util
+MODULE=Sub::Util       PACKAGE=Scalar::Util
 
 void
 dualvar(num,str)
@@ -1339,7 +1339,7 @@ CODE:
     XSRETURN_UNDEF;
 }
 
-MODULE=List::Util       PACKAGE=Sub::Util
+MODULE=Sub::Util       PACKAGE=Sub::Util
 
 void
 set_prototype(proto, code)

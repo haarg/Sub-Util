@@ -8,6 +8,7 @@ package List::Util;
 
 use strict;
 use warnings;
+use Sub::Util ();
 require Exporter;
 
 our @ISA        = qw(Exporter);
@@ -16,11 +17,7 @@ our @EXPORT_OK  = qw(
   pairs unpairs pairkeys pairvalues pairmap pairgrep pairfirst
 );
 our $VERSION    = "1.45";
-our $XS_VERSION = $VERSION;
 $VERSION    = eval $VERSION;
-
-require XSLoader;
-XSLoader::load('List::Util', $XS_VERSION);
 
 sub import
 {

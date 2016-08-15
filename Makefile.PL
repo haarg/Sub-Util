@@ -6,14 +6,13 @@ use ExtUtils::MakeMaker;
 my $PERL_CORE = grep { $_ eq 'PERL_CORE=1' } @ARGV;
 
 WriteMakefile(
-  NAME         => q[List::Util],
-  ABSTRACT     => q[Common Scalar and List utility subroutines],
+  NAME         => q[Sub::Util],
+  ABSTRACT     => q[Common Sub utility subroutines],
   AUTHOR       => q[Graham Barr <gbarr@cpan.org>],
   DEFINE       => q[-DPERL_EXT],
-  DISTNAME     => q[Scalar-List-Utils],
-  VERSION_FROM => 'lib/List/Util.pm',
+  VERSION_FROM => 'lib/Sub/Util.pm',
 
-  # We go through the ListUtil.xs trickery to foil platforms
+  # We go through the SubUtil.xs trickery to foil platforms
   # that have the feature combination of
   # (1) static builds
   # (2) allowing only one object by the same name in the static library
@@ -21,8 +20,8 @@ WriteMakefile(
   # This means that we can't have the top-level util.o
   # and the extension-level Util.o in the same build.
   # One such platform is the POSIX-BC BS2000 EBCDIC mainframe platform.
-  XS     => {'ListUtil.xs' => 'ListUtil.c'},
-  OBJECT => 'ListUtil$(OBJ_EXT)',
+  XS     => {'SubUtil.xs' => 'SubUtil.c'},
+  OBJECT => 'SubUtil$(OBJ_EXT)',
   ( $PERL_CORE
     ? ()
     : (
@@ -36,13 +35,13 @@ WriteMakefile(
             dynamic_config => 0,
             resources => {    ##
               repository => {
-                url => 'https://github.com/Scalar-List-Utils/Scalar-List-Utils.git',
-                web => 'https://github.com/Scalar-List-Utils/Scalar-List-Utils',
+                url => 'https://github.com/Scalar-List-Utils/Sub-Util.git',
+                web => 'https://github.com/Scalar-List-Utils/Sub-Util',
                 type => 'git',
               },
               bugtracker => {
-                mailto => 'bug-Scalar-List-Utils@rt.cpan.org',
-                web => 'https://rt.cpan.org/Public/Dist/Display.html?Name=Scalar-List-Utils',
+                mailto => 'bug-Sub-Util@rt.cpan.org',
+                web => 'https://rt.cpan.org/Public/Dist/Display.html?Name=Sub-Util',
               },
             },
           }
