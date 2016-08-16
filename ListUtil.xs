@@ -24,25 +24,6 @@
 #  define CvISXSUB(cv) CvXSUB(cv)
 #endif
 
-/* Some platforms have strict exports. And before 5.7.3 cxinc (or Perl_cxinc)
-   was not exported. Therefore platforms like win32, VMS etc have problems
-   so we redefine it here -- GMB
-*/
-#if PERL_BCDVERSION < 0x5007000
-/* Not in 5.6.1. */
-#  ifdef cxinc
-#    undef cxinc
-#  endif
-#  define cxinc() my_cxinc(aTHX)
-static I32
-my_cxinc(pTHX)
-{
-    cxstack_max = cxstack_max * 3 / 2;
-    Renew(cxstack, cxstack_max + 1, struct context); /* fencepost bug in older CXINC macros requires +1 here */
-    return cxstack_ix + 1;
-}
-#endif
-
 #ifndef sv_copypv
 #define sv_copypv(a, b) my_sv_copypv(aTHX_ a, b)
 static void
