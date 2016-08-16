@@ -2,8 +2,6 @@
 BEGIN { require 5.006; }
 use strict;
 use warnings;
-use Config;
-use File::Spec;
 use ExtUtils::MakeMaker;
 my $PERL_CORE = grep { $_ eq 'PERL_CORE=1' } @ARGV;
 
